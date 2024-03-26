@@ -1,4 +1,4 @@
-describe("CRUD using ReqRes api", () => {
+describe("CRUD operations with ReqRes api", () => {
   it("GET,POST,PUT & DELETE", () => {
     let userId;
 
@@ -19,7 +19,9 @@ describe("CRUD using ReqRes api", () => {
       method: "POST",
       url: "/users",
       body: {
+        //@ts-ignore
         name: chance.name(),
+        //@ts-ignore
         job: chance.profession(),
       },
     })
@@ -39,6 +41,7 @@ describe("CRUD using ReqRes api", () => {
           url: "/users/" + userId,
           body: {
             name: "Updated",
+            //@ts-ignore
             job: chance.profession(),
           },
         })
