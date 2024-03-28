@@ -1,6 +1,7 @@
 describe("CRUD operations with ReqRes api", () => {
   it("GET,POST,PUT & DELETE", () => {
     let userId;
+    let userArrayLength = 6;
 
     // GET Request, get a list of all users
     cy.intercept("GET", "/users").as("getList");
@@ -9,7 +10,9 @@ describe("CRUD operations with ReqRes api", () => {
       url: "/users",
     }).then((response) => {
       expect(response.body.data).to.be.an("array");
-      expect(response.body.data.length).to.be.greaterThan(5);
+      expect(response.body.data.length).to.equal(userArrayLength);
+      expect(response.status).to.equal(200);
+      expect(response.statusText).to.equal('OK');
     });
 
     // POST Request, create a new user
