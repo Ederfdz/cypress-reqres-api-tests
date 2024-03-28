@@ -15,16 +15,16 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Checkout 🛎
+      - name: Checkout 
         uses: actions/checkout@v3
 
-      - name: Run docker-compose 🐳
+      - name: Run docker-compose 
         run: docker-compose up -d e2e-chrome e2e-firefox e2e-edge e2e-electron
 
-      - name: Wait for services to start ⏱️
+      - name: Docker Compose logs
         run: docker-compose logs -f
 
-      - name: Upload Chrome artifacts 📸
+      - name: Save Chrome artifacts 
         uses: actions/upload-artifact@v3
         with:
           name: chrome-artifacts
@@ -34,7 +34,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 5
 
-      - name: Upload Firefox artifacts 📸
+      - name: Save Firefox artifacts 
         uses: actions/upload-artifact@v3
         with:
           name: firefox-artifacts
@@ -43,7 +43,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 5
 
-      - name: Upload Edge artifacts 📸
+      - name: Save Edge artifacts 
         uses: actions/upload-artifact@v3
         with:
           name: edge-artifacts
@@ -53,7 +53,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 5
 
-      - name: Upload Electron artifacts 📸
+      - name: Save Electron artifacts 
         uses: actions/upload-artifact@v3
         with:
           name: electron-artifacts
