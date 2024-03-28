@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run docker-compose 
-        run: docker-compose up -d e2e-chrome e2e-firefox e2e-edge e2e-electron
+        run: docker-compose up -d chrome firefox edge electron
 
       - name: Docker Compose logs
         run: docker-compose logs -f
