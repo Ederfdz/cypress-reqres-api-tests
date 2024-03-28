@@ -19,46 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run docker-compose 
-        run: docker-compose up -d chrome firefox edge electron
+        run: docker-compose up -d chrome firefox edge 
 
       - name: Docker Compose logs
         run: docker-compose logs -f
-
-      - name: Save Chrome artifacts 
-        uses: actions/upload-artifact@v3
-        with:
-          name: chrome-artifacts
-          path: |
-            ./artifacts/chrome/videos
-            ./artifacts/chrome/screenshots
-          if-no-files-found: ignore
-          retention-days: 5
-
-      - name: Save Firefox artifacts 
-        uses: actions/upload-artifact@v3
-        with:
-          name: firefox-artifacts
-          path:
-            ./artifacts/firefox/screenshots
-          if-no-files-found: ignore
-          retention-days: 5
-
-      - name: Save Edge artifacts 
-        uses: actions/upload-artifact@v3
-        with:
-          name: edge-artifacts
-          path: |
-            ./artifacts/edge/videos
-            ./artifacts/edge/screenshots
-          if-no-files-found: ignore
-          retention-days: 5
-
-      - name: Save Electron artifacts 
-        uses: actions/upload-artifact@v3
-        with:
-          name: electron-artifacts
-          path: |
-            ./artifacts/electron/videos
-            ./artifacts/electron/screenshots
-          if-no-files-found: ignore
-          retention-days: 5

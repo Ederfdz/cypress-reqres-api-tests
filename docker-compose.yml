@@ -1,28 +1,14 @@
-version: '3.8'
+version: "3.8"
 
 services:
   chrome:
     build: .
     command: "-b chrome"
-    volumes:
-      - ./artifacts/chrome/videos:/e2e/cypress/videos
-      - ./artifacts/chrome/screenshots:/e2e/cypress/screenshots
 
   firefox:
     build: .
-    command: "-b firefox -c video=false"
-    volumes:
-      - ./artifacts/firefox/screenshots:/e2e/cypress/screenshots
+    command: "-b firefox"
 
   edge:
     build: .
     command: "-b edge"
-    volumes:
-      - ./artifacts/edge/videos:/e2e/cypress/videos
-      - ./artifacts/edge/screenshots:/e2e/cypress/screenshots
-
-  electron:
-    build: .
-    volumes:
-      - ./artifacts/electron/videos:/e2e/cypress/videos
-      - ./artifacts/electron/screenshots:/e2e/cypress/screenshots
