@@ -1,4 +1,4 @@
-## Cypress ReqRes API Tester
+## Cypress ReqRes API Tests
 
 This project is a Cypress test suite written in TypeScript to test CRUD operations (Create, Read, Update, Delete) using the ReqRes API (https://reqres.in/).
 
