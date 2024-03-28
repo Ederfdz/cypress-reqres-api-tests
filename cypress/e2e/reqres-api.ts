@@ -2,9 +2,7 @@ describe("CRUD operations with ReqRes api", () => {
   it("GET,POST,PUT & DELETE", () => {
     let userId;
     let userArrayLength = 6;
-
     // GET Request, get a list of all users
-    cy.intercept("GET", "/users").as("getList");
     cy.api({
       method: "GET",
       url: "/users",
@@ -14,10 +12,7 @@ describe("CRUD operations with ReqRes api", () => {
       expect(response.status).to.equal(200);
       expect(response.statusText).to.equal('OK');
     });
-
     // POST Request, create a new user
-    cy.intercept("POST", "/users").as("createUser");
-
     cy.api({
       method: "POST",
       url: "/users",
