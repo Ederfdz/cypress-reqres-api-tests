@@ -3,7 +3,8 @@ FROM cypress/browsers:node-18.16.0-chrome-113.0.5672.92-1-ff-113.0-edge-113.0.17
 WORKDIR /api-tests
 
 COPY ./package.json .
-COPY ./tsconfig.ts .
+COPY ./tsconfig.json .
+COPY ./cypress.config.ts .
 COPY ./cypress ./cypress
 
 RUN npm i &&\
