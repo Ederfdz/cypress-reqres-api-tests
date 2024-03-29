@@ -1,4 +1,4 @@
-name: cross browser API testing 
+name: Cross-Browser API testing 
 
 on:
   push:
