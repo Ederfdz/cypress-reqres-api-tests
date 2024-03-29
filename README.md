@@ -1,4 +1,5 @@
-## Cypress ReqRes API Tests
+## Cypress ReqRes API Tests [![cross browser API testing](https://github.com/Ederfdz/cypress-reqres-api-tests/actions/workflows/api-tests.yml/badge.svg)](https://github.com/Ederfdz/cypress-reqres-api-tests/actions/workflows/api-tests.yml)
+
 
 This project is a Cypress test suite written in TypeScript to test CRUD operations (Create, Read, Update, Delete) using the ReqRes API (https://reqres.in/).
 
