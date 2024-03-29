@@ -5,14 +5,11 @@ This project is a Cypress test suite written in TypeScript to test CRUD operatio
 
 Features:
 
-Uses TypeScript for type safety and better code organization.
-Leverages [cypress-plugin-api](https://github.com/filiphric/cypress-plugin-api) for enhanced API call visualization in the Cypress UI.
-
-Tests CRUD operations on users:
-Create a new user.
-Read list of users and verify their existence.
-Update a user's details.
-Delete a user.
+- TypeScript for type safety and better code organization.
+- [cypress-plugin-api](https://github.com/filiphric/cypress-plugin-api) for enhanced API call visualization in the Cypress UI.
+- "cypress/browsers" Docker image to create an image pre-loaded with Node and all the browsers I wanted to run my tests on.
+- Docker Compose to create separate containers for Chrome, Firefox, and Edge.
+- GitHub Actions workflow that runs my tests daily, on pull request actions (open/close), and on pushes to the main branch.
 
 Requirements:
 
@@ -39,7 +36,5 @@ npm install
 
 #### Running Tests:
 ```
-npx cypress open
+npx cypress run
 ```
-
-Select restful-api.cy.ts spec file inside test runner.
